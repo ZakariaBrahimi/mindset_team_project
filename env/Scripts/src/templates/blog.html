@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="main_menu">
+   <div class="container">
+     <div class="row align-items-center">
+       <div class="col-lg-12">
+         <nav class="navbar navbar-expand-lg navbar-light">
+           <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo"width="170px" height="53px"> </a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+ 
+           <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+             <ul class="navbar-nav align-items-center">
+               <li class="nav-item active">
+                 <a class="nav-link" href="{% url 'main:home' %}">Home</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="{% url 'main:about' %}">about</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>
+               </li>
+ 
+              
+ 
+                               <li class="nav-item dropdown">
+                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Services
+                                   </a>
+                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                       <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun Activities</a>
+                                      
+                                       <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
+ 
+                                       <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
+ 
+                                       <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your Story</a>
+ 
+                                     
+                                   </div>
+                               </li>
+                              
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_1" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   blog
+                 </a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                 
+                    <a class="dropdown-item" href="{% url 'main:blog' %}">Articles</a>
+                 </div>
+               </li>
+ 
+               <li class="nav-item">
+                 <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
+               </li>
+             </ul>
+           </div>
+           <a class="btn_2 d-none d-lg-block" href="{% url 'main:connect' %}">Connect</a>
+         </nav>
+       </div>
+     </div>
+   </div>
+ </header>
+    <section class="breadcrumb_part breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2>articles</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog_area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{%static 'img/blog/single_blog_1.jpg'%}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>27</h3>
+                                    <p>May</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Everything You Need to Know About Anxiety</h2>
+                                </a>
+                                <p>Anxiety is your body’s natural response to stress. It’s a feeling of fear or apprehension about what’s to come. The first day of school, going to a job interview, or giving a speech may cause most people to feel fearful and nervous.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-user"></i> Anxiety</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{%static 'img/blog/single_blog_2.jpg'%}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>28</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>6 things you can do to cope with boredom at a time of social distancing</h2>
+                                </a>
+                                <p>More and more of us are staying home in an attempt to slow down the spreading coronavirus. But being stuck at home can lead to boredom.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-user"></i> covid-19, boredom</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{%static 'img/blog/single_blog_3.jpg'%}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Junk food is linked to both moderate and severe psychological distress</h2>
+                                </a>
+                                <p>A study has found that poor mental health is linked with poor diet quality -- regardless of personal characteristics such as gender age, education, age, marital status and income level.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-user"></i> junk food,psychological distress</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{%static 'img/blog/single_blog_4.jpg'%}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html'%}">
+                                    <h2>Is Everyone Depressed?</h2>
+                                </a>
+                                <p>Depression is a serious mental illness that can interfere with a person’s life. It can cause long-lasting and severe feelings of sadness, hopelessness, and a loss of interest in activities.
+
+                                </p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-user"></i> Depression , mental illness</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{%static 'img/blog/single_blog_5.jpg'%}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Types of Mental Illness</h2>
+                                </a>
+                                <p>There are many different conditions that are recognized as mental illnesses. The more common types include:</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-user"></i> mental illnesses</a></li>
+                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder='Search Keyword'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Search Keyword'">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="button"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1"
+                                    type="submit">Search</button>
+                            </form>
+                        </aside>
+
+                       
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            <div class="media post_item">
+                                <img src="{%static 'img/post/post_1.png'%}" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>From life was you fish...</h3>
+                                    </a>
+                                    <p>January 12, 2019</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="{%static 'img/post/post_2.png'%}" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>The Amazing Hubble</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="{%static 'img/post/post_3.png'%}" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Astronomy Or Astrology</h3>
+                                    </a>
+                                    <p>03 Hours ago</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="{%static 'img/post/post_4.png'%}" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Asteroids telescope</h3>
+                                    </a>
+                                    <p>01 Hours ago</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="single_sidebar_widget tag_cloud_widget">
+                            <h4 class="widget_title">Tag Clouds</h4>
+                            <ul class="list">
+                                <li>
+                                    <a href="#">project</a>
+                                </li>
+                                <li>
+                                    <a href="#">love</a>
+                                </li>
+                                <li>
+                                    <a href="#">technology</a>
+                                </li>
+                                <li>
+                                    <a href="#">travel</a>
+                                </li>
+                                <li>
+                                    <a href="#">restaurant</a>
+                                </li>
+                                <li>
+                                    <a href="#">life style</a>
+                                </li>
+                                <li>
+                                    <a href="#">design</a>
+                                </li>
+                                <li>
+                                    <a href="#">illustration</a>
+                                </li>
+                            </ul>
+                        </aside>
+
+
+                        <aside class="single_sidebar_widget instagram_feeds">
+                            <h4 class="widget_title">Instagram Feeds</h4>
+                            <ul class="instagram_row flex-wrap">
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_5.png'%}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_6.png'%}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_7.png'%}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_8.png'%}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_9.png'%}" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="{%static 'img/post/post_10.png'%}" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+
+
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Newsletter</h4>
+
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1"
+                                    type="submit">Subscribe</button>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}
