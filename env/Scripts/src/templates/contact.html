@@ -62,7 +62,11 @@
                </li>
              </ul>
            </div>
-           <a class="btn_2 d-none d-lg-block" href="{% url 'main:connect' %}">Connect</a>
+           {% if request.user.is_authenticated %}
+                <a class="btn_2 d-none d-lg-block" href="{% url 'account_logout' %}">LogOut</a>
+                {% else %}
+                <a class="btn_2 d-none d-lg-block" href="{% url 'account_login' %}">Connect</a>
+                {% endif %}
          </nav>
        </div>
      </div>
@@ -88,42 +92,20 @@
       <div class="d-none d-sm-block mb-5 pb-4">
         <div id="map" style="height: 480px;"></div>
         <script>
+          // Initialize and add the map
           function initMap() {
-            var uluru = {
-              lat: -25.363,
-              lng: 131.044
-            };
-            var grayStyles = [{
-                featureType: "all",
-                stylers: [{
-                    saturation: -90
-                  },
-                  {
-                    lightness: 50
-                  }
-                ]
-              },
-              {
-                elementType: 'labels.text.fill',
-                stylers: [{
-                  color: '#ccdee9'
-                }]
-              }
-            ];
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {
-                lat: -31.197,
-                lng: 150.744
-              },
-              zoom: 9,
-              styles: grayStyles,
-              scrollwheel: false
-            });
+            // The location of Uluru
+            var uluru = {lat:  44.34 , lng: 131.036};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 4, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
           }
-        </script>
-        <script
-          src="https://goo.gl/maps/emdfjVN9i5JSRAAM6">
-        </script>
+              </script>
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?AIzaSyAfKaKtZVmx8q2e7DqAbQ6NmIRtQEjdBf0=YOUR_API_KEY&callback=initMap">
+              </script>
 
       </div>
 

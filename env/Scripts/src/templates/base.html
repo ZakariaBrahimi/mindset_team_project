@@ -1,9 +1,17 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Mindset</title>
     <link rel="icon" href="{%static 'img/favicon.png'%}">
@@ -19,12 +27,11 @@
 </head>
 
 <body>
-    
-   
 
 {% block content %}
   
 {% endblock content %}
+
  <footer class="footer-area">
     <div class="footer section_padding">
       <div class="container">

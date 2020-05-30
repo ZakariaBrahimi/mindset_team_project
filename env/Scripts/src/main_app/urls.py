@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from . import views
 
-app_name = 'mid_app'
+app_name = 'main_app'
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^doctors/$', views.doctors, name='doctors'),
@@ -11,7 +11,9 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^share_stories/$', views.share_stories, name='share_stories'),
     url(r'^funactivities/$', views.funactivities, name='funactivities'),
-    url(r'^connect/$', views.connect, name='connect'),
+    # url(r'^one_post/(?P<slug>[-\w]+)/(?P<one_post_id>\d+)/$', views.one_post, name='one_post'),
+
+
     # url(r'^choice/$', views.choice, name='choice'),
     # url(r'^doctor-signup/$', views.DoctorSignup.as_view(), name='DoctorSignup'),
     

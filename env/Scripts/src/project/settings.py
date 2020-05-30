@@ -37,6 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'django_filters',
+    #all_auth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # ... include the providers you want to enable:
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.instagram',
+    #my_apps
     'main_app',
 ]
 
@@ -125,7 +137,38 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#all_auuth
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+SITE_ID = 1
+
+# Provider specific settings
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         # For each OAuth based provider, either add a ``SocialApp``
+#         # (``socialaccount`` app) containing the required client
+#         # credentials, or list them here:
+#         'APP': {
+#             'client_id': '123',
+#             'secret': '456',
+#             'key': ''
+#         }
+#     }
+# }
+
+
+
+#=======for django-address
+GOOGLE_API_KEY = 'AIzaSyD--your-google-maps-key-SjQBE'
+ACCOUNT_FORMS = {'signup': 'main_app.forms.MyCustomSignupForm'}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

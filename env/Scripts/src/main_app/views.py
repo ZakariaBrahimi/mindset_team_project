@@ -1,10 +1,38 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from .models import Post
+from .forms import MyFilter
+from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 
+def blog(request):
+    # user= request.user
+    posts = Post.objects.all()
+    filter = MyFilter(request.GET, queryset=posts)
+    posts = filter.qs
+    #<<---------------------------------Pagination--------------------------------------------------------------->>
+    p = Paginator(posts, 6)
+    page = request.GET.get('page')
+    try:
+        posts = p.page(page)
+    except PageNotAnInteger:
+        posts = p.page(1)
+    except EmptyPage:
+        posts = p.num_pages
 
-# Create your views here.
+    context = {
+        'posts' : posts,
+        'filter' : filter,
+        'page' : page,
+    }
+    return render(request, 'blog.html', context)
+
 def home(request):
+    
     context = {}
     return render(request, 'index.html', context)
+# Create your views here.
+# def home(request):
+#     context = {}
+#     return render(request, 'index.html', context)
 
 def about(request):
     context = {}
@@ -18,9 +46,6 @@ def duasreminders(request):
     context = {}
     return render(request, 'duasreminders.html', context)
 
-def blog(request):
-    context = {}
-    return render(request, 'blog.html', context)
 
 def share_stories(request):  
     context = {}
@@ -34,9 +59,7 @@ def funactivities(request):
     context = {}
     return render(request, 'funactivities.html', context)
 
-def connect(request):
-    context = {}
-    return render(request, 'connect.html', context)
+
 
 
 
