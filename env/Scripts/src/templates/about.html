@@ -1,77 +1,83 @@
-{% extends "base.html" %}
+
+  {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<header class="main_menu">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo"width="170px" height="53px"> </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo" width="¨370px" height="53px"> </a>
+                       <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-          <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main:home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:about' %}">about</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>
-              </li> -->
 
-             
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'main:home' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'main:about' %}">about</a>
+                                </li>
+                                <li class="nav-item">
+                                    <!--    <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>-->
+                                </li>
 
-                              <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
-                                      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Services
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun Activities</a>
-                                     
-                                      <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
 
-                                      <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       Services
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun activities</a>
+                                       
+                                        <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
 
-                                      <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your Story</a>
+                                    <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
 
-                                    
-                                  </div>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="{% url 'main:blog' %}">Blog</a>
-                              </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown_1" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  blog
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                
-                   <a class="dropdown-item" href="{% url 'main:blog' %}">Articles</a>
-                </div>
-              </li> -->
+                                        <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your stories</a>
 
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
-              </li>
-            </ul>
-          </div>
-          {% if request.user.is_authenticated %}
+                                   </div>
+                                </li>
+
+
+
+                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_1"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Blog
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                                <a class="dropdown-item" href="{% url 'main:Articles' %}">Articles</a>
+                                          
+                                            </div>
+                                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                {% if request.user.is_authenticated %}
                 <a class="btn_2 d-none d-lg-block" href="{% url 'account_logout' %}">LogOut</a>
                 {% else %}
                 <a class="btn_2 d-none d-lg-block" href="{% url 'account_login' %}">Connect</a>
                 {% endif %}
-        </nav>
-      </div>
-    </div>
-  </div>
-</header>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
     <section class="breadcrumb_part breadcrumb_bg">
         <div class="container">
             <div class="row">
@@ -85,8 +91,10 @@
             </div>
         </div>
     </section>
+    <!-- breadcrumb start-->
 
-    <section class="about_us single_about_padding">
+    <!-- about us part start-->
+        <section class="about_us padding_top">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-6 col-lg-6">
@@ -96,19 +104,22 @@
                 </div>
                 <div class="col-md-6 col-lg-5">
                     <div class="about_us_text">
-                        <h2>Who we are ?</h2>
-                        <p5>We are young students from different wilayas Béjaia,Telmcen,Algiers,Batna.<br>We want to create something that does more than just look nice . we believe, we can do it.
-
-                               <br>If not US who?<br>If not NOW when?      <br> Our purpose is to help and keep up a mentally safe lifestyle while staying at home. <br>we support you wherever you are.</p5>
-                    
+                        <h2>About us</h2>
+                        <p>   We are young students from different wilayas Béjaia, Telmcen, Algiers, Batna.
+                        our purpose is to help and keep up a mentally safe lifestyle while staying at home.
+                    we support you wherever you are. We want to create something that does more than just look nice . we believe, we can do it.</p> <p>If not US who? If not NOW when?
+<br> Our purpose is to help and keep up a mentally safe lifestyle while staying at home. <br>we support you wherever you are.</p>
+                        
                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- about us part end-->
 
-    <section class="our_depertment section_padding">
+    <!-- our depertment part start-->
+     <section class="our_depertment section_padding">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-xl-12">
@@ -125,7 +136,7 @@
                                              <img src="{%static 'img/Personnelpic.jpg'%}"
                                                     alt=""> 
                                             <p>
-                                            Pharmacy Student, Designer And Digital Marketer.</p>
+                                            Pharmacy Student, Designer & Digital Marketer.</p>
                                         </div>
                                     </div>
                                   
@@ -136,10 +147,10 @@
                                                     alt=""></span>
                                             <h4>Zakaria Abdessamed Brahimi</h4>
 
-                                                <img src="{%static 'img/zakaria.png'%}"
+                                                <img src="{%static img/zakaria.png'%}"
                                                     alt="">
                                             <p>
-                                            python developer , back end developer , president and founder of  Basmah Club and CodinGeeks Group </p>
+                                            python & back-end developer , president and founder of  Basmah Club and CodinGeeks Group </p>
                                         </div>
                                     </div>
 
@@ -150,7 +161,7 @@
                                             <h4>Mokeddem Ahmed Abdelaziz</h4>
                                              <img src="{%static 'img/ahmed.jpg'%}"
                                                     alt="">
-                                            <p>web designer and dev
+                                            <p>web designer & dev
                                             1CP student at ESI ,actif member at SHELLMATES club</p>
                                         </div>
                                     </div>
@@ -159,10 +170,10 @@
                                             <span class="our_depertment_icon"> <img src="{%static 'img/icons8-hand-drawn-star.png'%}"
                                                     alt=""></span>
                                             <h4>Madani yousfi Assia Samah</h4>
-                                            <img src="{%static 'img/samah.jpg'%}"
+                                            <img src="{%static img/samah.jpg'%}"
                                                     alt="">
                                             <p>Web developer
-                                                1CP student at ESI, 18 years old.
+                                                1CP student at ESI.
 
 
                                                 
@@ -176,9 +187,9 @@
                                                     alt=""></span>
                                             <h4>Hania MEGRI </h4>
 
-                                                <img src="{%static 'img/hania.png'%}"
+                                                <img src="{%static img/hania.png'%}"
                                                     alt="">
-                                            <p>Web designer developer
+                                            <p>Web designer & developer
                                           Student at university of Béjaia Abderrahmane Mira Master 1 software engineer and member of Itec club Mostaganem.</p>
                                         </div>
                                     </div>
@@ -191,5 +202,3 @@
             </div>
         </div>
     </section>
-    {% endblock content %}
- 
