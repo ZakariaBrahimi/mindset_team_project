@@ -1,136 +1,216 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mindset</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+            <!--::header part start::-->
+              {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<header class="main_menu">
-   <div class="container">
-     <div class="row align-items-center">
-       <div class="col-lg-12">
-         <nav class="navbar navbar-expand-lg navbar-light">
-           <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo"width="170px" height="53px"> </a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-           </button>
- 
-           <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
-             <ul class="navbar-nav align-items-center">
-               <li class="nav-item active">
-                 <a class="nav-link" href="{% url 'main:home' %}">Home</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:about' %}">about</a>
-               </li>
-               <!-- <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>
-               </li>
-  -->
-              
- 
-                               <li class="nav-item dropdown">
-                                   <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
-                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Services
-                                   </a>
-                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                       <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun Activities</a>
-                                      
-                                       <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
- 
-                                       <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
- 
-                                       <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your Story</a>
- 
-                                     
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo" width="¨370px" height="53px"> </a>
+                       <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'main:home' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'main:about' %}">about</a>
+                                </li>
+                                <li class="nav-item">
+                                    <!--    <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>-->
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       Services
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun activities</a>
+                                       
+                                        <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
+
+                                    <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
+
+                                        <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your stories</a>
+
                                    </div>
-                               </li>
-                               <li class="nav-item">
-                                 <a class="nav-link" href="{% url 'main:blog' %}">Blog</a>
-                               </li>
-               <!-- <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdown_1" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   blog
-                 </a>
-                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                 
-                    <a class="dropdown-item" href="{% url 'main:blog' %}">Articles</a>
-                 </div>
-               </li> -->
- 
-               <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
-               </li>
-             </ul>
-           </div>
-           {% if request.user.is_authenticated %}
+                                </li>
+
+
+
+                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown_1"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Blog
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                                <a class="dropdown-item" href="{% url 'main:Articles' %}">Articles</a>
+                                          
+                                            </div>
+                                        </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                {% if request.user.is_authenticated %}
                 <a class="btn_2 d-none d-lg-block" href="{% url 'account_logout' %}">LogOut</a>
                 {% else %}
                 <a class="btn_2 d-none d-lg-block" href="{% url 'account_login' %}">Connect</a>
                 {% endif %}
-         </nav>
-       </div>
-     </div>
-   </div>
- </header>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+           <!-- Header part end-->
+    <!-- breadcrumb start-->
     <section class="breadcrumb_part breadcrumb_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
+                           <!--::************************************************modifié***********************************::-->
                             <h2>Shared stories</h2>
+                            <!--::************************************************modifié***********************************::-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
    <section class="blog_area single-post-area section_padding">
       <div class="container">
          <div class="row">
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="{%static 'img/blog/single_blog_1.png'%}" alt="">
+                     <img class="img-fluid" src="{%static 'img/dont.jpg' %}" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2>Second divided from form fish beast made every of seas
-                        all gathered us saying he our
+                     <h2>Don't give up
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
+                        <li><a href="#"><i class="far fa-user"></i> Exprience, True Story</a></li>
                         <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
                      </ul>
                      <p class="excert">
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
+                        This is a true story of a young woman who went through the most gruesome fire. When you read her story, you’ll realize that your trials are absolutely nothing compared to what this young girl went through.
+
+               It was September 25, 2000. Maricel Apatan was an 11-year old girl in Zamboanga. On that day, this little girl went with her uncle to draw water.
+
+Along the way, four men met them. They were carrying long knives. They told her uncle to face down on the ground, and they hacked him on the neck and killed him.
                      </p>
                      <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
+                       Maricel was in total shock, especially that the men were their neighbors. She tried to escape, but the men ran after her.
+
+She cried, “Kuya, ‘wag po, ‘wag n’yo akong tagain! Maawa po kayo sa akin!” (“Don’t kill me! Have mercy on me!”)
+
+But they weren’t listening. With a long knife, a man slashed her on the neck too.
+
+Maricel fell to the ground and lost consciousness.
+
+When she woke up, she saw a lot of blood. She also saw the feet of the men around her, but she pretended to be dead.
+
+When they walked away, Maricel ran back home. But along the way, she saw that both her hands were falling off. Because the men hacked them too. She cried but she kept running.
+
+Sometimes, she would faint and fall to the ground. But she’d regain consciousness and run again.
+
+When she was near her home, Maricel called her mother.
+
+Upon seeing her daughter, her mother screamed in terror. She wrapped her bloodied child in a blanket and carried her to the hospital.
+
+Here was the problem: From her house to the highway, it was a 12-kilometer walk. It took them 4 hours just to reach the highway.
+
+When they arrived in the hospital, the doctors thought Maricel was going to die. But for 5 hours, they operated on her. It took 25 stitches to stitch together the long knife wound in her neck and back.
+
+
                      </p>
                      <div class="quote-wrapper">
                         <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
+                          Real Winners Don’t Give Up!
+                          Maricel Apatan, a true winner!!!
+                        
                         </div>
                      </div>
                      <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
+                       Maricel barely survived. And she lost both of her hands.
+
+Ironically, the next day was Maricel’s birthday. She was 12 years old.
+
+But tragedy didn’t end there. When they went home, they saw their home was gone. It was ransacked and burned down by the goons.
+
+Being very poor, Maricel’s family also didn’t have P50,000 for their hospital bills.
+
+But God sent many angels along the way to help them.
+
+Archbishop Antonio Ledesma, a distant relative, paid for hospital bills and helped them bring the criminals to court. They were sentenced to prison.
+
+Today, she’s staying with the nuns at Regina Rosarii with Sr. Eppie Brasil, O.P.
+
+But this is the incredible miracle. Instead of staying down, Maricel kept running.
+
+Instead of cursing God why she had no hands, she now uses her wrists in incredible ways that will boggle your mind.
+
+    Maricel Apatan
+
+Maricel was cited as the most industrious, best in computer, and most courteous in the School for Crippled Children.
+
+In 2008, she graduated from a course in Hotel and Restaurant Management. She even received a Gold medal for Arts and Crafts.
+
+In 2011, she finished her education to be a chef. Yes, a Chef without hands.
+
+Nothing can stop this young lady from reaching her dreams.
+
+Real Winners Don’t Give Up!
                      </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
+                       <a class="btn_2 " href="https://academictips.org/blogs/true-story-real-winners-dont-give-up/">Read more </a>
+                     
                   </div>
                </div>
                <div class="navigation-top">
@@ -138,6 +218,7 @@
                      <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span> Lily and 4
                         people like this</p>
                      <div class="col-sm-4 text-center my-2 my-sm-0">
+                        <!-- <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> 06 Comments</p> -->
                      </div>
                      <ul class="social-icons">
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -152,7 +233,7 @@
                            class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="{%static 'img/post/preview.png'%}" alt="">
+                                 <img class="img-fluid" src="{%static 'img/post/preview.png' %}" alt="">
                               </a>
                            </div>
                            <div class="arrow">
@@ -182,7 +263,7 @@
                            </div>
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="{%static 'img/post/next.png'%}" alt="">
+                                 <img class="img-fluid" src="{%static 'img/post/next.png' %}" alt="">
                               </a>
                            </div>
                         </div>
@@ -191,13 +272,12 @@
                </div>
                <div class="blog-author">
                   <div class="media align-items-center">
-                     <img src="{%static 'img/blog/author.png" alt="">
+                     <img src="{%static 'img/hania.png' %}" alt="">
                      <div class="media-body">
                         <a href="#">
-                           <h4>Harvard milan</h4>
+                           <h4>Hania MEGRI</h4>
                         </a>
-                        <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                           our dominion twon Second divided from</p>
+                        <p>Every great story on the planet happened when someone decides to be happy and not to give up but kept going no matter what!</p>
                      </div>
                   </div>
                </div>
@@ -207,17 +287,44 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="{%static 'img/comment/comment_1.png'%}" alt="">
+                              <img src="{%static 'img/Ahmed.jpg' %}" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                                          “You are not accidental. The world needs you. Without you, something will be missing in existence and nobody can replace it.” _Osho
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#">Mokeddem Ahmed Abdelaziz</a>
+                                    </h5>
+                                    <p class="date">Mai 4, 2020 at 3:12 pm </p>
+                                 </div>
+                                 <div class="reply-btn">
+                                    <a href="#" class="btn-reply text-uppercase">reply</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="comment-list">
+                     <div class="single-comment justify-content-between d-flex">
+                        <div class="user justify-content-between d-flex">
+                           <div class="thumb">
+                              <img src="{%static 'img/samah.jpg' %}" alt="">
+                           </div>
+                           <div class="desc">
+                              <p class="comment">
+                                " it's your road , and yours alone
+                                      others may walk it with you
+                               but no one can walk it for you " _ Rumi
+
+                              </p>
+                              <div class="d-flex justify-content-between">
+                                 <div class="d-flex align-items-center">
+                                    <h5>
+                                       <a href="#">Madani yousfi Assia Samah</a>
                                     </h5>
                                     <p class="date">December 4, 2017 at 3:12 pm </p>
                                  </div>
@@ -233,45 +340,21 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="{%static 'img/comment/comment_2.png'%}" alt="">
+                         
+                              <img src="{%static 'img/zakaria.png' %}" alt="">
                            </div>
                            <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                              <p class="comment"> <br>
+                        ربي انت الميسر وانت المسهل سهل امري وحقق مطلبي وسخر لي ما هو خير لي
+اللهم اجرني من موت الغفلة ولا تأخذني من الدنيا الا وانت راض عني
+
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#">Zakaria Abdessamed Brahimi</a>
                                     </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="{%static 'img/comment/comment_3.png'%}" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                    <p class="date">Mai 4, 2020 at 3:12 pm </p>
                                  </div>
                                  <div class="reply-btn">
                                     <a href="#" class="btn-reply text-uppercase">reply</a>
@@ -349,4 +432,98 @@
          </div>
       </div>
    </section>
-   {% endblock content %}
+    {% endblock content %}
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <footer class="footer-area">
+    <div class="footer section_padding">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-2 col-md-4 col-sm-6 single-footer-widget">
+            <a href="#" class="footer_logo"> <img src="img/logo.png" alt="#"> </a>
+            <p>This website is made with love and charity by Soldiers</p>
+            <div class="social_logo">
+              <a href="#"><i class="ti-facebook"></i></a>
+              <a href="#"> <i class="ti-twitter"></i> </a>
+              <a href="#"><i class="ti-instagram"></i></a>
+              <a href="#"><i class="ti-skype"></i></a>
+            </div>
+          </div>
+        
+          <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
+            <h4>Explore</h4>
+            <ul>
+                            <li><a href="doctor.html">Exprienced doctors</a></li>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="single-blog.html">Articles </a></li>
+                            <li><a href="funactivities.html">Activities</a></li>
+                           
+            </ul>
+          </div>
+       
+          <div class="col-xl-3 col-sm-6 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Help us with your opinion.</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form target="_blank"
+                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get" class="form-inline">
+                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" required=""
+                  type="email">
+                <button class="click-btn btn btn-default text-uppercase"> <i class="ti-angle-right"></i>
+                </button>
+                <div style="position: absolute; left: -5000px;">
+                  <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                </div>
+
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright_part">
+      <div class="container">
+        <div class="row align-items-center">
+          <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<i class="ti-heart" aria-hidden="true"></i> by <a href="" target="_blank">Soldiers</a>
+
+</p>
+          <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+            <a href="#"><i class="ti-facebook"></i></a>
+            <a href="#"> <i class="ti-twitter"></i> </a>
+            <a href="#"><i class="ti-instagram"></i></a>
+            <a href="#"><i class="ti-skype"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+     <!-- footer part end-->
+ 
+     <!-- jquery plugins here-->
+ 
+     <script src="js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="js/bootstrap.min.js"></script>
+     <!-- owl carousel js -->
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/jquery.nice-select.min.js"></script>
+     <!-- contact js -->
+     <script src="js/jquery.ajaxchimp.min.js"></script>
+     <script src="js/jquery.form.js"></script>
+     <script src="js/jquery.validate.min.js"></script>
+     <script src="js/mail-script.js"></script>
+     <script src="js/contact.js"></script>
+     <!-- custom js -->
+     <script src="js/custom.js"></script>
+ </body>
+ 
+ </html>
