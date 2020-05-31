@@ -50,10 +50,10 @@
           <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
             <h4>Explore</h4>
             <ul>
-                            <li><a href="doctor.html">Exprienced doctors</a></li>
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="single-blog.html">Articles </a></li>
-                            <li><a href="funactivities.html">Activities</a></li>
+                            <li><a href="{% url 'main:doctors' %}">Exprienced doctors</a></li>
+                            <li><a href="{% url 'main:about' %}">About us</a></li>
+                            <li><a href="{% url 'main:blog' %}">Articles </a></li>
+                            <li><a href="{% url 'main:funactivities' %}">Activities</a></li>
                            
             </ul>
           </div>

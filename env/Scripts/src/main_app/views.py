@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post
+from .models import Post, Contact
 from .forms import MyFilter
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 
@@ -52,6 +52,13 @@ def share_stories(request):
     return render(request, 'shared_stories.html', context)
 
 def contact(request):
+    if request.method == 'POST':
+        msg = request.POST.get('message')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        Contact(msg=msg,name=name,email=email,subject=subject).save()
+        return redirect('/')
     context = {}
     return render(request, 'contact.html', context)
 

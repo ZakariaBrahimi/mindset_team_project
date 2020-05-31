@@ -22,9 +22,9 @@
                <li class="nav-item">
                  <a class="nav-link" href="{% url 'main:about' %}">about</a>
                </li>
-               <li class="nav-item">
+               <!-- <li class="nav-item">
                  <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>
-               </li>
+               </li> -->
  
               
  
@@ -45,8 +45,10 @@
                                      
                                    </div>
                                </li>
-                              
-               <li class="nav-item dropdown">
+                               <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:blog' %}">Blog</a>
+                              </li>
+               <!-- <li class="nav-item dropdown">
                  <a class="nav-link dropdown-toggle" href="" id="navbarDropdown_1" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    blog
@@ -55,7 +57,7 @@
                  
                     <a class="dropdown-item" href="{% url 'main:blog' %}">Articles</a>
                  </div>
-               </li>
+               </li> -->
  
                <li class="nav-item">
                  <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
@@ -90,22 +92,7 @@
   <section class="contact-section section_padding">
     <div class="container">
       <div class="d-none d-sm-block mb-5 pb-4">
-        <div id="map" style="height: 480px;"></div>
-        <script>
-          // Initialize and add the map
-          function initMap() {
-            // The location of Uluru
-            var uluru = {lat:  44.34 , lng: 131.036};
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: uluru});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: uluru, map: map});
-          }
-              </script>
-              <script async defer
-              src="https://maps.googleapis.com/maps/api/js?AIzaSyAfKaKtZVmx8q2e7DqAbQ6NmIRtQEjdBf0=YOUR_API_KEY&callback=initMap">
-              </script>
+        
 
       </div>
 
@@ -115,8 +102,8 @@
           <h2 class="contact-title">Get in Touch</h2>
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate">
+          <form class="form-contact contact_form"  method="POST">
+            {% csrf_token %}
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
