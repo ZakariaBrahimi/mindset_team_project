@@ -13,6 +13,7 @@
   background-image: linear-gradient(to right, #fff, #fff, #fff);
 }
 
+
 /**************** common css start ****************/
 /* line 3, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_common.scss */
 body {
@@ -20,6 +21,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
+  color :#fff;
 }
 
 /* line 9, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_common.scss */

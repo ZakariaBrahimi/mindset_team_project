@@ -1,229 +1,168 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stories{% endblock %}
 {% block content %}
-<header class="main_menu">
+<header class="main_menu ">
    <div class="container">
-     <div class="row align-items-center">
-       <div class="col-lg-12">
-         <nav class="navbar navbar-expand-lg navbar-light">
-           <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo.png'%}" alt="logo"width="170px" height="53px"> </a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-           </button>
- 
-           <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
-             <ul class="navbar-nav align-items-center">
-               <li class="nav-item active">
-                 <a class="nav-link" href="{% url 'main:home' %}">Home</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:about' %}">about</a>
-               </li>
-               <!-- <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:doctors' %}">Doctors</a>
-               </li>
-  -->
-              
- 
-                               <li class="nav-item dropdown">
-                                   <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
-                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Services
-                                   </a>
-                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                       <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun Activities</a>
-                                      
-                                       <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
- 
-                                       <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
- 
-                                       <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your Story</a>
- 
-                                     
-                                   </div>
-                               </li>
-                               <li class="nav-item">
-                                 <a class="nav-link" href="{% url 'main:blog' %}">Blog</a>
-                               </li>
-               <!-- <li class="nav-item dropdown">
-                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdown_1" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   blog
-                 </a>
-                 <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                 
-                    <a class="dropdown-item" href="{% url 'main:blog' %}">Articles</a>
-                 </div>
-               </li> -->
- 
-               <li class="nav-item">
-                 <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
-               </li>
-             </ul>
-           </div>
+       <div class="row align-items-center">
+           <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                   <a class="navbar-brand" href="{% url 'main:home' %}"> <img src="{%static 'img/logo1.png'%}" alt="logo" width="¨370px" height="53px"> </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse"
+                   data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                   aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+
+                   <div class="collapse navbar-collapse main-menu-item justify-content-center"
+                       id="navbarSupportedContent">
+                       <ul class="navbar-nav align-items-center">
+                           <li class="nav-item active">
+                               <a class="nav-link" href="{% url 'main:home' %}">Home</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="{% url 'main:about' %}">about</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="{% url 'main:blog' %}">Blog</a>
+                          </li>
+
+
+                           <li class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Services
+                               </a>
+                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                   <a class="dropdown-item" href="{% url 'main:funactivities' %}">Fun activities</a>
+                                  
+                                   <a class="dropdown-item" href="{% url 'main:duasreminders' %}">Duas and Reminders </a>
+
+                               <a class="dropdown-item" href="{% url 'main:doctors' %}">Meet doctors</a>
+
+                                   <a class="dropdown-item" href="{% url 'main:share_stories' %}">Share your stories</a>
+
+                              </div>
+                           </li>
+
+
+
+               
+                           <li class="nav-item">
+                               <a class="nav-link" href="{% url 'main:contact' %}">Contact</a>
+                           </li>
+                       </ul>
+                   </div>
+
            {% if request.user.is_authenticated %}
-                <a class="btn_2 d-none d-lg-block" href="{% url 'account_logout' %}">LogOut</a>
-                {% else %}
-                <a class="btn_2 d-none d-lg-block" href="{% url 'account_login' %}">Connect</a>
-                {% endif %}
-         </nav>
+           <a class="btn_2 d-none d-lg-block" href="{% url 'account_logout' %}">LogOut</a>
+           {% else %}
+           <a class="btn_2 d-none d-lg-block" href="{% url 'account_login' %}">Connect</a>
+           {% endif %}
+                  
+               </nav>
+           </div>
        </div>
-     </div>
    </div>
- </header>
+</header>
+
+           <!-- Header part end-->
+    <!-- breadcrumb start-->
     <section class="breadcrumb_part breadcrumb_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
+                           <!--::************************************************modifié***********************************::-->
                             <h2>Shared stories</h2>
+                            <!--::************************************************modifié***********************************::-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- breadcrumb start-->
+   <!--================stories Area =================-->
+   {% if request.user.is_authenticated %}
+  <div class="text-center ">
+    <a class="btn_2 btn_2-primary" href="{% url 'main:add_story' %}">Share your story</a>
+  </div>
+  {%endif%}
    <section class="blog_area single-post-area section_padding">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-8 posts-list">
+      
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-8 posts-list">
+             {% for story in stories %}
+                 
+               
                <div class="single-post">
-                  <div class="feature-img">
-                     <img class="img-fluid" src="{%static 'img/blog/single_blog_1.png'%}" alt="">
-                  </div>
+                {% if story.Video %}
+                <video style="width: 700px; height: 500px;" controls>
+                   <source src='{{ story.Video.url }}' type='video/mp4'>
+                   Your browser does not support the video tag.
+                   </video>
+                   {% else %}
+                   {% if story.Image %}
+                   <img class="card-img-butt" style="width: 700px; height: 500px;" src="{{story.Image.url}}">
+                   {% else %}
+                   <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                   {% endif %}
+                      
+
+                   {% endif %}
+                  
                   <div class="blog_details">
-                     <h2>Second divided from form fish beast made every of seas
-                        all gathered us saying he our
-                     </h2>
+                   <h2 class="card-title">{{story.title}}</h2>
+                   <p class="card-text">{{story.content|truncatewords:30}}</p>
+               <!--{% url 'main:one_story' story.id story.slug %}--> 
+                  <a href="" class="btn_2 d-none d-lg-block" >Read More &rarr;</a>
                      <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                      <div class="card-footer text-muted">
+                         <li><i class="far fa-user"></i>Posted on {{story.created|date:'F j, Y'}} by <a href="#">{{story.user}} </a></li>
+                         
+                         <li><a href="#"><i class="far fa-user"></i> Exprience, True Story</a></li>
+                         <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                       </div>
                      </ul>
-                     <p class="excert">
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
-                     <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
-                        </div>
-                     </div>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
+                     
+                      
                   </div>
                </div>
-               <div class="navigation-top">
-                  <div class="d-sm-flex justify-content-between text-center">
-                     <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span> Lily and 4
-                        people like this</p>
-                     <div class="col-sm-4 text-center my-2 my-sm-0">
-                     </div>
-                     <ul class="social-icons">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                     </ul>
-                  </div>
-                  <div class="navigation-area">
-                     <div class="row">
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="{%static 'img/post/preview.png'%}" alt="">
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-left"></span>
-                              </a>
-                           </div>
-                           <div class="detials">
-                              <p>Prev Post</p>
-                              <a href="#">
-                                 <h4>Space The Final Frontier</h4>
-                              </a>
-                           </div>
-                        </div>
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                           <div class="detials">
-                              <p>Next Post</p>
-                              <a href="#">
-                                 <h4>Telescopes 101</h4>
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-right"></span>
-                              </a>
-                           </div>
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="{%static 'img/post/next.png'%}" alt="">
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="blog-author">
-                  <div class="media align-items-center">
-                     <img src="{%static 'img/blog/author.png" alt="">
-                     <div class="media-body">
-                        <a href="#">
-                           <h4>Harvard milan</h4>
-                        </a>
-                        <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                           our dominion twon Second divided from</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="comments-area">
+               {% endfor %}
+
+               
+                  {% include "stories_pagination.html" with page=stories  %}
+             </div>
+               
+               <!-- <div class="comments-area">
                   <h4>05 Comments</h4>
                   <div class="comment-list">
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="{%static 'img/comment/comment_1.png'%}" alt="">
+                              <img src="{%static 'img/Ahmed.jpg' %}" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                                          “You are not accidental. The world needs you. Without you, something will be missing in existence and nobody can replace it.” _Osho
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#">Mokeddem Ahmed Abdelaziz</a>
                                     </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                    <p class="date">Mai 4, 2020 at 3:12 pm </p>
                                  </div>
+                                 {% if request.user.is_authenticated %}
                                  <div class="reply-btn">
                                     <a href="#" class="btn-reply text-uppercase">reply</a>
                                  </div>
+                                 {% endif %}
                               </div>
                            </div>
                         </div>
@@ -233,23 +172,27 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="{%static 'img/comment/comment_2.png'%}" alt="">
+                              <img src="{%static 'img/samah.jpg' %}" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                " it's your road , and yours alone
+                                      others may walk it with you
+                               but no one can walk it for you " _ Rumi
+
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#">Madani yousfi Assia Samah</a>
                                     </h5>
                                     <p class="date">December 4, 2017 at 3:12 pm </p>
                                  </div>
+                                 {% if request.user.is_authenticated %}
                                  <div class="reply-btn">
                                     <a href="#" class="btn-reply text-uppercase">reply</a>
                                  </div>
+                                 {% endif %}
                               </div>
                            </div>
                         </div>
@@ -259,23 +202,27 @@
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="{%static 'img/comment/comment_3.png'%}" alt="">
+                         
+                              <img src="{%static 'img/zakaria.png' %}" alt="">
                            </div>
                            <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                              <p class="comment"> <br>
+                        ربي انت الميسر وانت المسهل سهل امري وحقق مطلبي وسخر لي ما هو خير لي
+اللهم اجرني من موت الغفلة ولا تأخذني من الدنيا الا وانت راض عني
+
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#">Zakaria Abdessamed Brahimi</a>
                                     </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                    <p class="date">Mai 4, 2020 at 3:12 pm </p>
                                  </div>
+                                 {% if request.user.is_authenticated %}
                                  <div class="reply-btn">
                                     <a href="#" class="btn-reply text-uppercase">reply</a>
                                  </div>
+                                 {% endif %}
                               </div>
                            </div>
                         </div>
@@ -283,38 +230,34 @@
                   </div>
                </div>
                <div class="comment-form">
+                  
+                  
+                  {% if request.user.is_authenticated %}
                   <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
-                     <div class="row">
+                  
+                     
+                  <form class="form-contact comment_form" action="#" method="POST" id="commentForm">
+                   {% csrf_token %}
+                   <div class="row">
                         <div class="col-12">
                            <div class="form-group">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
                                  placeholder="Write Comment"></textarea>
                            </div>
                         </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
-                           </div>
-                        </div>
                      </div>
                      <div class="form-group">
-                        <button type="submit" class="button btn_1 button-contactForm">Send Message</button>
+                        <button type="submit" class="button btn_1 button-contactForm">Comment</button>
                      </div>
                   </form>
+                  {% endif %}
                </div>
             </div>
-            <div class="col-lg-4">
+             -->
+            
+               
+               <!-- search -->
+            <!-- <div class="col-lg-5">
                <div class="blog_right_sidebar">
                   <aside class="single_sidebar_widget search_widget">
                      <form action="#">
@@ -329,24 +272,98 @@
                         </div>
                         <button class="button rounded-0 primary-bg text-white w-100 btn_1" type="submit">Search</button>
                      </form>
-                  </aside>
+                  </aside> 
                   
                 
+
+                  
                
-                  <aside class="single_sidebar_widget newsletter_widget">
-                     <h4 class="widget_title">Newsletter</h4>
-                     <form action="#">
-                        <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1"
-                           type="submit">Subscribe</button>
-                     </form>
-                  </aside>
+                 
                </div>
-            </div>
+            </div>-->
+            
+            <div class="col-lg-4">
+             <div class="blog_right_sidebar">
+                <!--search-->
+                <aside class="single_sidebar_widget search_widget">
+                  <form method="GET" >
+                      {% csrf_token %}
+                      {{filter.form|crispy}}
+                      <button class="button rounded-0 primary-bg text-white w-100 btn_1"
+                          type="submit">Search</button>
+                  </form>
+              </aside>
+
+                 <!--recent posts-->
+                 <aside class="single_sidebar_widget popular_post_widget">
+                  <h3 class="widget_title">Recent Post</h3>
+                  {% for story in stories %}
+                    
+                  <div class="media post_item">
+                      {% if story.Image %}
+                      <img class="card-img rounded-0" style="width: 60px;height: 70px;" src="{{story.Image.url}}" alt="story">
+                      {% else %}
+                      <img class="card-img rounded-0" src="{%static 'img/web.jpg'%}" alt="story">
+                      {%endif%}
+                      <div class="media-body">
+                          <a href="">
+                              <h3>{{story.title}}...</h3>
+                          </a>
+                          <p>{{story.created|date:'F d , Y'}}</p>
+                      </div>
+                  </div>
+                  {% endfor %}
+
+                 
+              </aside>
+                 <aside class="single_sidebar_widget tag_cloud_widget">
+                     <h4 class="widget_title">Tag Clouds</h4>
+                     <ul class="list">
+                         <li>
+                             <a href="#">project</a>
+                         </li>
+                         <li>
+                             <a href="#">love</a>
+                         </li>
+                         <li>
+                             <a href="#">technology</a>
+                         </li>
+                         <li>
+                             <a href="#">travel</a>
+                         </li>
+                         <li>
+                             <a href="#">restaurant</a>
+                         </li>
+                         <li>
+                             <a href="#">life style</a>
+                         </li>
+                         <li>
+                             <a href="#">design</a>
+                         </li>
+                         <li>
+                             <a href="#">illustration</a>
+                         </li>
+                     </ul>
+                 </aside>
+
+                 <aside class="single_sidebar_widget newsletter_widget">
+                     <h4 class="widget_title">Newsletter</h4>
+                     
+                     <form action="#">
+                         <div class="form-group">
+                             <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                 onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                         </div>
+                         <button class="button rounded-0 primary-bg text-white w-100 btn_1"
+                             type="submit">Subscribe</button>
+                     </form>
+                 </aside>
+             </div>
+         </div>
          </div>
       </div>
    </section>
-   {% endblock content %}
+   
+    {% endblock content %}
+    
+   <!--================Blog Area end =================-->
